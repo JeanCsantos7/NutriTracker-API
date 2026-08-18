@@ -2,6 +2,8 @@ package com.Spring.NutriTrack.infrastructure.repository;
 
 import com.Spring.NutriTrack.domain.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UsuarioRepository extends JpaRepository<Long, Usuario> {
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 }

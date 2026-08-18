@@ -2,6 +2,8 @@ package com.Spring.NutriTrack.infrastructure.repository;
 
 import com.Spring.NutriTrack.domain.model.RegistroPeso;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RegistroPesoRepository extends JpaRepository<Long, RegistroPeso> {
+@Repository
+public interface RegistroPesoRepository extends JpaRepository<RegistroPeso, Long> {
 }
