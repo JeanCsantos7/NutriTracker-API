@@ -8,12 +8,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +32,9 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Objetivo objetivo;
     private LocalDate dataCadastro;
+
+    @OneToMany(mappedBy = "usersGoals", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Meta> metas = new ArrayList<>();
+
+
 }

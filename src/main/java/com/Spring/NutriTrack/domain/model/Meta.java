@@ -18,7 +18,6 @@ public class Meta {
 
     private Long id;
 
-    private Long usuarioId;
 
     private Double pesoMeta;
 
@@ -32,4 +31,8 @@ public class Meta {
 
     @Enumerated(EnumType.STRING)
     private StatusMeta status;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usersGoals;
 }
